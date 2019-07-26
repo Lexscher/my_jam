@@ -1,0 +1,25 @@
+{
+  "name": "my_jam",
+  "version": "1.0.0",
+  "description": "A web scraper built on NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lexscher/my_jam.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "JavaScript",
+    "Web",
+    "Scraping"
+  ],
+  "author": "Alexander Schelchere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lexscher/my_jam/issues"
+  },
+  "homepage": "https://github.com/Lexscher/my_jam#readme"
+}
