@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/Lexscher/my_jam/issues"
   },
-  "homepage": "https://github.com/Lexscher/my_jam#readme"
+  "homepage": "https://github.com/Lexscher/my_jam#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1"
+  }
 }
