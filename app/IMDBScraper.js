@@ -1,5 +1,5 @@
-// Require Dir Adapter class
-const checker = require('./FileAdapter');
+// Require File Adapter class
+const FileAdapter = require('./FileAdapter');
 // Require depenencies
 const puppeteer = require('puppeteer');
 // Require Scraper
@@ -15,13 +15,13 @@ module.exports = class IMDBScraper extends Scraper {
         // Use our get IMDbJson method then construct our file with the returned data
         await this.getIMDbJSON().then(cast => {
           // Count how many files are in our jsonnn file
-          const currentPage = checker.countFilesInFolder('./json');
+          const currentPage = FileAdapter.countFilesInFolder('./json');
           // construct the path we'll want to write to.
           const path = `./json/${this.domain}-json-${currentPage}.json`;
           // Stringify the JSON
           const jsonStr = JSON.stringify(cast, null, 2);
           // Write the new file with our json.
-          checker.createNewJsonFile(path, jsonStr);
+          FileAdapter.createNewJsonFile(path, jsonStr);
         });
       } catch (err) {
         this.handleError(err);

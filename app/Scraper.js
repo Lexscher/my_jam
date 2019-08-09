@@ -1,5 +1,5 @@
-// Require Dir Adapter class
-const checker = require('./FileAdapter');
+// Require File Adapter class
+const FileAdapter = require('./FileAdapter');
 // Require depenencies
 const puppeteer = require('puppeteer');
 
@@ -24,8 +24,8 @@ class Scraper {
       // go to a website via Scraper instance's URL
       await page.goto(this.url);
       // Count how many files are in our screenshots
-      const currentPage = await checker.countFilesInFolder('./screenshots');
-      // Create a new screenshot, name based on url &  the number of files in "screenshots"
+      const currentPage = await FileAdapter.countFilesInFolder('./screenshots');
+      // Create a new screenshot, name based on url & the number of files in "screenshots"
       await page.screenshot({
         path: `./screenshots/${this.domain}-screenshot-${currentPage}.png`
       });
@@ -47,7 +47,7 @@ class Scraper {
       // go to a website via Scraper instance's URL
       await page.goto(this.url);
       // Count how many files are in our screenshots
-      const currentPage = await checker.countFilesInFolder('./pdf');
+      const currentPage = await FileAdapter.countFilesInFolder('./pdf');
       // Create a new screenshot, name based on url &  the number of files in "pdfs"
       await page.pdf({
         path: `./pdfs/${this.domain}-pdf-${currentPage}.pdf`
@@ -63,9 +63,6 @@ class Scraper {
     console.log("Something's not right...");
     console.error(error.stack);
   };
-  
-  // show the domain
-  showDomain = () => this.domain;
 }
 
 module.exports = Scraper;
