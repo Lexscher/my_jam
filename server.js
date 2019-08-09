@@ -11,13 +11,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 app.set('port', port);
 
-// set urls
+// set url
 const otherhoodImdbUrl = 'https://www.imdb.com/title/tt4180560/';
 
-// Create an instance of our Scraper class
+// Create a new instance of our IMDBScraper class
 const otherhoodCastScraper = new IMDBScraper(otherhoodImdbUrl);
 
-// routes
+// set our route to GET all the JSON
 app.get('/', (req, res) => {
   // render JSON data on localhost:3000
   otherhoodCastScraper
